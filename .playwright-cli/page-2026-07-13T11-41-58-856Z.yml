@@ -1,0 +1,23 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: AUTHOR ACCESS
+        - generic [ref=e7]: SECURE BAY / 01
+      - generic [ref=e9]:
+        - paragraph [ref=e10]:
+          - generic [ref=e14]: Hans‘s Blog
+        - paragraph [ref=e15]: 管理入口
+      - heading "管理员登录" [level=1] [ref=e19]
+      - paragraph [ref=e20]: 管理入口仅供站点作者使用。
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic [ref=e23]: 邮箱
+          - textbox "邮箱" [ref=e24]
+        - generic [ref=e25]:
+          - generic [ref=e26]: 密码
+          - textbox "密码" [ref=e27]
+        - button "登录管理后台" [ref=e28]
+      - link "返回博客首页" [ref=e33] [cursor=pointer]:
+        - /url: /
+  - button "Open Next.js Dev Tools" [ref=e39] [cursor=pointer]

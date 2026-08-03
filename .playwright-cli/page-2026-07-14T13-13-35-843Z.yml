@@ -1,0 +1,87 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e44]:
+    - banner [ref=e45]:
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - paragraph [ref=e49]:
+              - generic [ref=e52]: Hans‘s Blog
+            - paragraph [ref=e53]: 当前登录 zhdydkdh@163.com
+          - generic [ref=e54]:
+            - generic "后台状态" [ref=e55]:
+              - generic [ref=e56]: 写作舱在线
+              - generic [ref=e58]: AUTHOR / 01
+            - button "退出登录" [ref=e60]
+        - navigation "管理员导航" [ref=e65]:
+          - link "控制台" [ref=e66] [cursor=pointer]:
+            - /url: /admin
+          - link "文章库" [ref=e67] [cursor=pointer]:
+            - /url: /admin/posts
+          - link "查看站点" [ref=e68] [cursor=pointer]:
+            - /url: /
+    - main [ref=e69]:
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - generic [ref=e72]:
+            - paragraph [ref=e73]: 管理后台
+            - heading "写作控制台" [level=1] [ref=e74]
+            - paragraph [ref=e75]: 最近编辑的草稿和技术笔记都在这里。
+          - link "新建文章" [ref=e76] [cursor=pointer]:
+            - /url: /admin/posts/new
+        - region "管理内容指标" [ref=e80]:
+          - generic [ref=e81]:
+            - heading "草稿" [level=2] [ref=e86]
+            - paragraph [ref=e87]: "0"
+          - generic [ref=e88]:
+            - heading "最近编辑" [level=2] [ref=e93]
+            - paragraph [ref=e94]: "2"
+          - generic [ref=e95]:
+            - heading "分类" [level=2] [ref=e99]
+            - paragraph [ref=e100]: "0"
+          - generic [ref=e101]:
+            - heading "标签" [level=2] [ref=e106]
+            - paragraph [ref=e107]: "0"
+          - generic [ref=e108]:
+            - heading "系列" [level=2] [ref=e113]
+            - paragraph [ref=e114]: "0"
+        - generic [ref=e115]:
+          - generic [ref=e116]:
+            - heading "最近编辑" [level=2] [ref=e118]
+            - list [ref=e122]:
+              - listitem [ref=e123]:
+                - generic [ref=e124]:
+                  - link "test1" [ref=e125] [cursor=pointer]:
+                    - /url: /admin/posts/cmrd6wisv0002nav5a51mom0f
+                  - paragraph [ref=e126]: /test1
+                  - paragraph [ref=e127]: 这是一个测试
+                  - generic [ref=e128]:
+                    - generic [ref=e129]: 未分类
+                    - generic [ref=e133]: 0 个标签
+                    - generic [ref=e137]: 无系列
+                - generic [ref=e142]:
+                  - generic [ref=e143]: 7月09日 15:33
+                  - link "编辑" [ref=e144] [cursor=pointer]:
+                    - /url: /admin/posts/cmrd6wisv0002nav5a51mom0f
+                  - button "删除" [ref=e148]
+              - listitem [ref=e152]:
+                - generic [ref=e153]:
+                  - link "test" [ref=e154] [cursor=pointer]:
+                    - /url: /admin/posts/cmrcwyxjq0002osv5nawqie8w
+                  - paragraph [ref=e155]: /test
+                  - paragraph [ref=e156]: test
+                  - generic [ref=e157]:
+                    - generic [ref=e158]: 未分类
+                    - generic [ref=e162]: 0 个标签
+                    - generic [ref=e166]: 无系列
+                - generic [ref=e171]:
+                  - generic [ref=e172]: 7月09日 10:55
+                  - link "编辑" [ref=e173] [cursor=pointer]:
+                    - /url: /admin/posts/cmrcwyxjq0002osv5nawqie8w
+                  - button "删除" [ref=e177]
+          - generic [ref=e181]:
+            - heading "草稿队列" [level=2] [ref=e183]
+            - paragraph [ref=e187]: 草稿队列为空。
+        - link "全部文章" [ref=e189] [cursor=pointer]:
+          - /url: /admin/posts
+  - button "Open Next.js Dev Tools" [ref=e39] [cursor=pointer]
+  - alert [ref=e43]

@@ -1,0 +1,112 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - banner [ref=f2e3]:
+      - generic [ref=f2e4]:
+        - link "返回首页" [ref=f2e5] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f2e9]:
+            - generic [ref=f2e10]: Hans‘s Blog
+            - generic [ref=f2e11]: 程序员的个人技术博客
+        - button "打开导航" [ref=f2e13]
+    - main [ref=f2e15]:
+      - generic [ref=f2e20]:
+        - paragraph [ref=f2e21]:
+          - generic [ref=f2e24]: Hans‘s Blog
+        - heading "Hans‘s Blog" [level=1] [ref=f2e25]
+        - paragraph [ref=f2e28]: 这里记录技术笔记、系统草图和软件构建实验。
+        - paragraph [ref=f2e29]: 偏向工程实践、架构拆解和日常构建记录。
+        - generic [ref=f2e30]:
+          - link "查看笔记" [ref=f2e31] [cursor=pointer]:
+            - /url: /notes
+          - link "打开博客索引" [ref=f2e35] [cursor=pointer]:
+            - /url: "#lab-index"
+        - link "邮箱 zhdydkdh@163.com" [ref=f2e39] [cursor=pointer]:
+          - /url: mailto:zhdydkdh@163.com
+      - region "内容模块" [ref=f2e44]:
+        - region [ref=f2e46]:
+          - generic [ref=f2e47]:
+            - paragraph [ref=f2e48]: 内容模块
+            - heading "精选笔记" [level=2] [ref=f2e49]
+            - paragraph [ref=f2e50]: 首页展示已经公开且被明确设为精选的技术笔记，并同步真实公开内容统计。
+          - list [ref=f2e52]:
+            - listitem [ref=f2e53]:
+              - article [ref=f2e54]:
+                - generic [ref=f2e55]: 技术笔记
+                - generic [ref=f2e58]:
+                  - link "test" [ref=f2e59] [cursor=pointer]:
+                    - /url: /notes/test
+                  - paragraph [ref=f2e61]: test
+                  - generic [ref=f2e62]:
+                    - generic [ref=f2e63]: 2026/07/09
+                    - generic [ref=f2e66]: 预计阅读 15 分钟
+                    - generic [ref=f2e70]: 未分类
+          - region "公开内容统计" [ref=f2e74]:
+            - article [ref=f2e75]:
+              - generic [ref=f2e80]:
+                - paragraph [ref=f2e81]: 公开笔记
+                - paragraph [ref=f2e82]: "2"
+              - paragraph [ref=f2e83]: 当前可以公开阅读的技术笔记
+            - article [ref=f2e84]:
+              - generic [ref=f2e89]:
+                - paragraph [ref=f2e90]: 精选笔记
+                - paragraph [ref=f2e91]: "1"
+              - paragraph [ref=f2e92]: 首页明确展示的公开笔记
+            - article [ref=f2e93]:
+              - generic [ref=f2e98]:
+                - paragraph [ref=f2e99]: 分类
+                - paragraph [ref=f2e100]: "0"
+              - paragraph [ref=f2e101]: 暂无公开数据
+            - article [ref=f2e102]:
+              - generic [ref=f2e108]:
+                - paragraph [ref=f2e109]: 标签
+                - paragraph [ref=f2e110]: "0"
+              - paragraph [ref=f2e111]: 暂无公开数据
+            - article [ref=f2e112]:
+              - generic [ref=f2e119]:
+                - paragraph [ref=f2e120]: 系列
+                - paragraph [ref=f2e121]: "0"
+              - paragraph [ref=f2e122]: 暂无公开数据
+      - region [ref=f2e123]:
+        - generic [ref=f2e124]:
+          - generic [ref=f2e125]:
+            - paragraph [ref=f2e126]: 内容入口
+            - heading "博客索引" [level=2] [ref=f2e127]
+            - paragraph [ref=f2e128]: 笔记、系列、归档和搜索已经连接到公开内容，方便按主题与时间回看技术记录。
+          - generic [ref=f2e129]:
+            - article [ref=f2e130]:
+              - link "笔记" [ref=f2e135] [cursor=pointer]:
+                - /url: /notes
+              - paragraph [ref=f2e140]: 聚合技术写作、实现记录和踩坑复盘。
+            - article [ref=f2e141]:
+              - link "系列" [ref=f2e148] [cursor=pointer]:
+                - /url: /series
+              - paragraph [ref=f2e153]: 把同一主题的技术笔记按顺序串成专题。
+            - article [ref=f2e154]:
+              - link "归档" [ref=f2e160] [cursor=pointer]:
+                - /url: /archive
+              - paragraph [ref=f2e165]: 按时间回看已经发布的技术笔记。
+            - article [ref=f2e166]:
+              - link "搜索" [ref=f2e172] [cursor=pointer]:
+                - /url: /search
+              - paragraph [ref=f2e177]: 通过标题、主题或关键词查找内容。
+    - contentinfo [ref=f2e178]:
+      - generic [ref=f2e179]:
+        - generic [ref=f2e180]:
+          - paragraph [ref=f2e181]: Hans‘s Blog
+          - paragraph [ref=f2e182]: 程序员的个人技术博客
+          - paragraph [ref=f2e183]: 技术笔记、系统草图和软件构建实验。
+        - navigation "页脚导航" [ref=f2e184]:
+          - list [ref=f2e185]:
+            - listitem [ref=f2e186]:
+              - link "笔记" [ref=f2e187] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=f2e188]:
+              - link "系列" [ref=f2e189] [cursor=pointer]:
+                - /url: /series
+            - listitem [ref=f2e190]:
+              - link "归档" [ref=f2e191] [cursor=pointer]:
+                - /url: /archive
+            - listitem [ref=f2e192]:
+              - link "搜索" [ref=f2e193] [cursor=pointer]:
+                - /url: /search
+  - button "Open Next.js Dev Tools" [ref=f2e199] [cursor=pointer]

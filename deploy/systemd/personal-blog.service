@@ -1,0 +1,29 @@
+[Unit]
+Description=Turnin's Blog (Next.js production server)
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=turnin
+Group=turnin
+WorkingDirectory=/home/turnin/project/blog
+Environment=NODE_ENV=production
+Environment=NEXT_TELEMETRY_DISABLED=1
+Environment=ADMIN_SITE_ORIGIN=
+Environment=PLAYWRIGHT_ADMIN_PASSWORD=
+ExecStart=/usr/bin/node /home/turnin/project/blog/node_modules/next/dist/bin/next start --hostname 0.0.0.0 --port 3000
+Restart=on-failure
+RestartSec=5s
+TimeoutStartSec=30s
+TimeoutStopSec=30s
+KillSignal=SIGINT
+UMask=0077
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=/home/turnin/project/blog/.next
+
+[Install]
+WantedBy=multi-user.target

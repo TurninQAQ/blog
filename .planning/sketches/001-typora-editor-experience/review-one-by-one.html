@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sketch 001 Review</title>
+    <link rel="stylesheet" href="../themes/default.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font-sans);
+      }
+
+      button {
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .page {
+        width: min(100%, 1180px);
+        margin: 0 auto;
+        padding: 28px 20px 64px;
+      }
+
+      .intro h1 {
+        margin: 0 0 10px;
+        font-size: 30px;
+        line-height: 1.18;
+      }
+
+      .intro p {
+        margin: 0;
+        color: var(--color-text-muted);
+        line-height: 1.6;
+      }
+
+      .chooser {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin: 26px 0 20px;
+      }
+
+      .choice {
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        background: var(--color-surface);
+        padding: 16px;
+        text-align: left;
+        color: var(--color-text-muted);
+        transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+      }
+
+      .choice.active {
+        border-color: var(--color-border-strong);
+        background: rgba(46, 242, 181, 0.08);
+        color: var(--color-text);
+      }
+
+      .choice strong {
+        display: block;
+        color: var(--color-text);
+        font-size: 18px;
+        line-height: 1.2;
+      }
+
+      .choice span {
+        display: block;
+        margin-top: 8px;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .focus-shell {
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        background: var(--color-surface);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .focus-topbar {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--color-border);
+        padding: 16px 18px;
+      }
+
+      .focus-topbar h2 {
+        margin: 0 0 8px;
+        font-size: 24px;
+        line-height: 1.2;
+      }
+
+      .focus-topbar p {
+        margin: 0;
+        color: var(--color-text-muted);
+        line-height: 1.55;
+      }
+
+      .focus-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pill,
+      .action {
+        min-height: 38px;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        background: #0d1016;
+        padding: 0 12px;
+        color: var(--color-text-muted);
+      }
+
+      .pill.active {
+        border-color: var(--color-border-strong);
+        color: var(--color-primary);
+      }
+
+      .action.primary {
+        border-color: transparent;
+        background: var(--color-primary);
+        color: #07100d;
+        font-weight: 700;
+      }
+
+      .variant {
+        display: none;
+      }
+
+      .variant.active {
+        display: block;
+      }
+
+      .focus-body {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 290px;
+        gap: 16px;
+        padding: 18px;
+      }
+
+      .writer {
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        background: #0d1016;
+      }
+
+      .writer-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--color-border);
+        padding: 12px;
+      }
+
+      .toolbar-left,
+      .toolbar-right {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .mini {
+        min-height: 32px;
+        border: 1px solid var(--color-border);
+        border-radius: 999px;
+        background: transparent;
+        padding: 0 10px;
+        color: var(--color-text-muted);
+        font-size: 12px;
+      }
+
+      .mini.active {
+        border-color: var(--color-border-strong);
+        color: var(--color-primary);
+      }
+
+      .article {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 36px 34px 54px;
+      }
+
+      .article h3 {
+        margin: 0 0 14px;
+        font-size: 34px;
+        line-height: 1.18;
+        color: var(--color-text);
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+
+      .meta span {
+        border: 1px solid var(--color-border);
+        border-radius: 999px;
+        padding: 5px 10px;
+        color: var(--color-text-muted);
+        font-size: 12px;
+      }
+
+      .article p,
+      .article li {
+        color: #a8b3c2;
+        font-size: 16px;
+        line-height: 1.72;
+      }
+
+      .article h4 {
+        margin: 28px 0 10px;
+        color: var(--color-text);
+        font-size: 22px;
+        line-height: 1.22;
+      }
+
+      .article ul {
+        margin: 0;
+        padding-left: 22px;
+      }
+
+      .article code,
+      .source,
+      .note {
+        font-family: var(--font-mono);
+      }
+
+      .source {
+        overflow: auto;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        background: #070a0f;
+        padding: 14px;
+        color: #d9ffe8;
+        font-size: 13px;
+        line-height: 1.55;
+        white-space: pre-wrap;
+      }
+
+      .aside {
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        background: #0d1016;
+        padding: 14px;
+      }
+
+      .aside h4 {
+        margin: 0 0 14px;
+        color: var(--color-primary);
+        font-family: var(--font-mono);
+        font-size: 13px;
+      }
+
+      .aside p {
+        margin: 10px 0 0;
+        color: var(--color-text-muted);
+        line-height: 1.55;
+        font-size: 14px;
+      }
+
+      .aside .field {
+        margin-top: 14px;
+      }
+
+      .field label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--color-text-muted);
+        font-size: 13px;
+      }
+
+      .field div {
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        background: #070a0f;
+        padding: 10px 12px;
+        color: var(--color-text);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .review-note {
+        margin-top: 18px;
+        border-left: 3px solid var(--color-accent);
+        background: rgba(120, 215, 255, 0.06);
+        padding: 12px 14px;
+        color: var(--color-text-muted);
+        line-height: 1.6;
+      }
+
+      .footer-hint {
+        margin-top: 18px;
+        color: var(--color-text-muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 980px) {
+        .chooser,
+        .focus-body {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="intro">
+        <h1>编辑器方案逐个看</h1>
+        <p>上面的大按钮切换 A / B / C。最终已选 A；B 和 C 保留为历史备选示意，方便回看当时的取舍。</p>
+      </section>
+
+      <section class="chooser" aria-label="方案切换">
+        <button class="choice active" type="button" onclick="showChoice('a', this)">
+          <strong>A · 真 WYSIWYG</strong>
+          <span>已选并实现：直接编辑渲染后的文章块。</span>
+        </button>
+        <button class="choice" type="button" onclick="showChoice('b', this)">
+          <strong>B · 类 Typora 单栏</strong>
+          <span>历史备选：默认单栏写作，源码作为兜底。</span>
+        </button>
+        <button class="choice" type="button" onclick="showChoice('c', this)">
+          <strong>C · 折中双模式</strong>
+          <span>历史备选：主画布写作，复杂 Markdown 时再打开源码抽屉。</span>
+        </button>
+      </section>
+
+      <section class="focus-shell">
+        <article id="variant-a" class="variant active">
+          <div class="focus-topbar">
+            <div>
+              <h2>A · 真 WYSIWYG Blocks</h2>
+              <p>目标是“看到的就是最终文章”，标题、段落、列表、代码块都直接在渲染结果里编辑。</p>
+            </div>
+            <div class="focus-actions">
+              <button class="pill active" type="button">WYSIWYG</button>
+              <button class="action" type="button">Markdown 源码</button>
+              <button class="action primary" type="button">保存草稿</button>
+            </div>
+          </div>
+          <div class="focus-body">
+            <section class="writer">
+              <div class="writer-toolbar">
+                <div class="toolbar-left">
+                  <button class="mini active" type="button">H2</button>
+                  <button class="mini" type="button">{ }</button>
+                  <button class="mini" type="button">列表</button>
+                </div>
+                <div class="toolbar-right">
+                  <span class="mini">自动保存：刚刚</span>
+                </div>
+              </div>
+              <div class="article">
+                <h3>React Server Components 实战笔记</h3>
+                <div class="meta">
+                  <span>架构</span>
+                  <span>Next.js</span>
+                  <span>全栈博客 #3</span>
+                </div>
+                <p>看到的就是最终文章形态，尽量不让作者面对原始 Markdown 符号。</p>
+                <h4>数据边界</h4>
+                <ul>
+                  <li>Server Component 读取稳定数据。</li>
+                  <li>Client Component 只承担交互状态。</li>
+                </ul>
+                <div class="source">export async function getPost(slug: string) {
+  return prisma.post.findUnique({ where: { slug } });
+}</div>
+              </div>
+            </section>
+            <aside class="aside">
+              <h4>判断重点</h4>
+              <p>这版最接近 Typora，但要把富文本结构稳定转回 Markdown，技术复杂度最高。</p>
+              <div class="field">
+                <label>适合</label>
+                <div>最强沉浸写作体验</div>
+              </div>
+              <div class="field">
+                <label>代价</label>
+                <div>实现重，代码块和表格互转要很谨慎</div>
+              </div>
+            </aside>
+          </div>
+        </article>
+
+        <article id="variant-b" class="variant">
+          <div class="focus-topbar">
+            <div>
+              <h2>B · 类 Typora 单栏</h2>
+              <p>默认只有一个写作画布，不再左右分栏。仍然保存 Markdown，但界面尽量像在直接写文章。</p>
+            </div>
+            <div class="focus-actions">
+              <button class="pill active" type="button">写作</button>
+              <button class="action" type="button">切源码</button>
+              <button class="action primary" type="button">保存草稿</button>
+            </div>
+          </div>
+          <div class="focus-body">
+            <section class="writer">
+              <div class="writer-toolbar">
+                <div class="toolbar-left">
+                  <button class="mini active" type="button">写作</button>
+                  <button class="mini" type="button">源码</button>
+                  <button class="mini" type="button">安全检查</button>
+                </div>
+                <div class="toolbar-right">
+                  <span class="mini">历史备选</span>
+                </div>
+              </div>
+              <div class="article">
+                <h3>React Server Components 实战笔记</h3>
+                <div class="meta">
+                  <span>草稿</span>
+                  <span>架构</span>
+                  <span>Next.js</span>
+                </div>
+                <p><code>#</code> 输入时保留少量 Markdown 提示，离开当前块后仍然显示成文章样式。</p>
+                <h4>数据边界</h4>
+                <p>整个主视线都停留在同一个画布里，不再一边源码一边预览对照。</p>
+                <ul>
+                  <li>仍然以 Markdown 作为真实存储。</li>
+                  <li>源码模式只在需要时打开。</li>
+                  <li>现有安全 Markdown 渲染链可以复用。</li>
+                </ul>
+                <div class="source">```ts
+const mode = "focused-writing";
+```</div>
+              </div>
+            </section>
+            <aside class="aside">
+              <h4>判断重点</h4>
+              <p>这版不是 100% 真 WYSIWYG，但它最接近你要的 Typora 气质，同时还能稳住 Markdown 输出。</p>
+              <div class="field">
+                <label>适合</label>
+                <div>程序员写技术笔记，既要沉浸感，也要 Markdown 兜底</div>
+              </div>
+              <div class="field">
+                <label>代价</label>
+                <div>中等，需要改编辑交互，但不需要完整富文本系统</div>
+              </div>
+            </aside>
+          </div>
+        </article>
+
+        <article id="variant-c" class="variant">
+          <div class="focus-topbar">
+            <div>
+              <h2>C · 折中双模式</h2>
+              <p>文章画布是主视图，复杂 Markdown 细节通过源码抽屉处理，不再常驻左右各半。</p>
+            </div>
+            <div class="focus-actions">
+              <button class="pill active" type="button">文章</button>
+              <button class="action" type="button">源码抽屉</button>
+              <button class="action primary" type="button">保存草稿</button>
+            </div>
+          </div>
+          <div class="focus-body">
+            <section class="writer">
+              <div class="writer-toolbar">
+                <div class="toolbar-left">
+                  <button class="mini active" type="button">文章视图</button>
+                  <button class="mini" type="button">源码抽屉已打开</button>
+                </div>
+                <div class="toolbar-right">
+                  <span class="mini">复杂 Markdown 兜底</span>
+                </div>
+              </div>
+              <div class="article">
+                <h3>React Server Components 实战笔记</h3>
+                <div class="meta">
+                  <span>架构</span>
+                  <span>Next.js</span>
+                  <span>系列 #3</span>
+                </div>
+                <p>主画布负责沉浸写作，复杂表格、代码 fence、少数精修场景放进源码抽屉。</p>
+                <h4>缓存策略</h4>
+                <p>普通段落、标题、列表都在文章视图里处理；只在真正需要时看源码。</p>
+                <div class="source">const revalidate = 60;</div>
+              </div>
+            </section>
+            <aside class="aside">
+              <h4>判断重点</h4>
+              <p>这版对程序员最稳，几乎不会失去 Markdown 可控性，但视觉上仍然保留一部分“源码存在感”。</p>
+              <div class="field">
+                <label>适合</label>
+                <div>复杂技术文档、代码块和表格很多的场景</div>
+              </div>
+              <div class="field">
+                <label>代价</label>
+                <div>体验比旧分栏更聚焦，但没有 B 那么纯粹</div>
+              </div>
+            </aside>
+          </div>
+        </article>
+      </section>
+
+      <div class="review-note">
+        最终选择：`A · 真 WYSIWYG`。当前实现不保留源码兜底，遇到不兼容 Markdown 会先阻止进入可视化编辑。
+      </div>
+
+      <p class="footer-hint">本地草图文件：
+        <a href="./review-one-by-one.html" style="color: var(--color-primary)">review-one-by-one.html</a>
+      </p>
+    </main>
+
+    <script>
+      function showChoice(id, button) {
+        document.querySelectorAll(".variant").forEach((node) => {
+          node.classList.remove("active");
+        });
+        document.querySelectorAll(".choice").forEach((node) => {
+          node.classList.remove("active");
+        });
+        document.getElementById("variant-" + id).classList.add("active");
+        button.classList.add("active");
+      }
+    </script>
+  </body>
+</html>

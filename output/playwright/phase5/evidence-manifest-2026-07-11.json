@@ -1,0 +1,582 @@
+{
+  "schema_version": "1.0",
+  "capture_session_started_at": "2026-07-11T12:48:54Z",
+  "generated_at": "2026-07-11T13:26:25Z",
+  "environment": {
+    "application": "production build on local loopback",
+    "browser": "headed Chrome through Playwright CLI",
+    "design_baseline": "accepted light-mecha public and unified admin designs"
+  },
+  "gate_results": {
+    "verify_ci": "pass: 106/106 unit tests, Prisma validation/generation, production build, source scan, and two high-threshold audits",
+    "headed_e2e": "pass: 465 passed, 23 conditional skips, 0 failed",
+    "production_security_smoke": "pass: public/admin 200, protected redirects non-disclosing, probe GET/POST 404, headed login/logout, 0 CSP violations"
+  },
+  "fixture_lifecycle": {
+    "draft_isolation": "pass: absent from homepage, notes, detail, search, tag, category, archive, series index, and series detail while draft",
+    "published_discovery": "pass: discoverable through all applicable public route families after protected publish",
+    "authoring_content": "pass: Markdown-backed WYSIWYG code, table, HTTPS image, category, two tags, and ordered series persisted",
+    "series_and_related": "pass: one bounded companion record supplied the next-series and related-note regions during visual inspection",
+    "cleanup": "pass: both records unpublished and deleted through protected UI; unique orphan taxonomy removed only when unreferenced; database and public/admin routes report zero residual fixture data"
+  },
+  "retention": {
+    "images": 10,
+    "intermediate_images_retained": 0,
+    "sensitive_data": "none",
+    "admin_capture_redaction": "The visible administrator identity was replaced in the browser DOM with a generic administrator label before protected screenshots; no password, session value, database URL, private draft, or unrelated local post was retained."
+  },
+  "visual_matrix": [
+    {
+      "surface": "homepage",
+      "route": "/",
+      "region": "light-mecha hero and featured note",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Hero, navigation, calls to action, active ambient canvas, and featured note are readable with no overlap, horizontal overflow, or blank effect layer."
+    },
+    {
+      "surface": "notes",
+      "route": "/notes",
+      "region": "published note library",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Published cards, metadata, and controls remain readable and in bounds with no page overflow."
+    },
+    {
+      "surface": "article",
+      "route": "/notes/phase5-release-evidence-20260711-1259",
+      "region": "article header and Markdown body",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Title, metadata, code, table, loaded HTTPS image, and reading layout are coherent with no clipping or horizontal page overflow."
+    },
+    {
+      "surface": "search",
+      "route": "/search?q=Phase%205",
+      "region": "search form and contextual results",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Search controls and published result context are readable, reachable, and contained."
+    },
+    {
+      "surface": "tag",
+      "route": "/tags/phase5-verify-1259",
+      "region": "tag result list",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Tag heading and published note result are readable and contained without draft leakage or overflow."
+    },
+    {
+      "surface": "category",
+      "route": "/categories/phase5-1259",
+      "region": "category result list",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Category heading and published note result are readable and contained without draft leakage or overflow."
+    },
+    {
+      "surface": "archive",
+      "route": "/archive",
+      "region": "published month group",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Archive grouping and note row are legible with stable alignment and no horizontal overflow."
+    },
+    {
+      "surface": "series-index",
+      "route": "/series",
+      "region": "series index entry",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Series entry and navigation target are readable, present, and in bounds."
+    },
+    {
+      "surface": "series-detail",
+      "route": "/series/phase5-1259",
+      "region": "ordered series list",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Both temporary published records appear in order with coherent metadata and no overflow."
+    },
+    {
+      "surface": "series-navigation",
+      "route": "/notes/phase5-release-evidence-20260711-1259",
+      "region": "navigation[aria-label='系列导航']",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "The next-series link is visible, readable, and contained after the article body."
+    },
+    {
+      "surface": "related-articles",
+      "route": "/notes/phase5-release-evidence-20260711-1259",
+      "region": "related notes rail",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "The related-note rail is readable beside the article and does not obstruct content."
+    },
+    {
+      "surface": "homepage",
+      "route": "/",
+      "region": "light-mecha hero and featured note",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Mobile hero, artwork crop, menu control, calls to action, and featured-note transition are coherent with no overflow."
+    },
+    {
+      "surface": "notes",
+      "route": "/notes",
+      "region": "published note library",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Published cards and metadata reflow into a readable single column with no clipped control."
+    },
+    {
+      "surface": "article",
+      "route": "/notes/phase5-release-evidence-20260711-1259",
+      "region": "article header and Markdown body",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Title, metadata chips, cover, code, table, and image remain readable in document flow without page overflow."
+    },
+    {
+      "surface": "search",
+      "route": "/search?q=Phase%205",
+      "region": "search form and contextual results",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Search input, submit control, and result content remain reachable and in bounds."
+    },
+    {
+      "surface": "tag",
+      "route": "/tags/phase5-verify-1259",
+      "region": "tag result list",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Tag result reflows cleanly with readable metadata and no horizontal overflow."
+    },
+    {
+      "surface": "category",
+      "route": "/categories/phase5-1259",
+      "region": "category result list",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Category result reflows cleanly with readable metadata and no horizontal overflow."
+    },
+    {
+      "surface": "archive",
+      "route": "/archive",
+      "region": "published month group",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Archive group and note row remain readable in mobile document flow."
+    },
+    {
+      "surface": "series-index",
+      "route": "/series",
+      "region": "series index entry",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Series entry remains readable and fully contained at the mobile width."
+    },
+    {
+      "surface": "series-detail",
+      "route": "/series/phase5-1259",
+      "region": "ordered series list",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Ordered series records stack coherently with accessible links and no page overflow."
+    },
+    {
+      "surface": "series-navigation",
+      "route": "/notes/phase5-release-evidence-20260711-1259",
+      "region": "navigation[aria-label='系列导航']",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Series navigation follows the article in mobile document flow and stays fully in bounds."
+    },
+    {
+      "surface": "related-articles",
+      "route": "/notes/phase5-release-evidence-20260711-1259",
+      "region": "related notes section",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Related notes move below the article and remain readable without obstruction."
+    },
+    {
+      "surface": "homepage",
+      "route": "/",
+      "region": "light-mecha hero and featured note",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Minimum-width hero copy, controls, artwork crop, and following content remain coherent with no horizontal page overflow."
+    },
+    {
+      "surface": "notes",
+      "route": "/notes",
+      "region": "published note library",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Note cards, titles, and metadata remain readable and contained at the minimum width."
+    },
+    {
+      "surface": "article",
+      "route": "/notes/phase5-release-evidence-20260711-1259",
+      "region": "article header and Markdown body",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Article title, metadata, Markdown structures, and media remain readable with internal containment and no page overflow."
+    },
+    {
+      "surface": "search",
+      "route": "/search?q=Phase%205",
+      "region": "search form and contextual results",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Search controls and result card remain accessible and contained at the minimum width."
+    },
+    {
+      "surface": "tag",
+      "route": "/tags/phase5-verify-1259",
+      "region": "tag result list",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Tag result and metadata remain readable and in bounds at the minimum width."
+    },
+    {
+      "surface": "category",
+      "route": "/categories/phase5-1259",
+      "region": "category result list",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Category result and metadata remain readable and in bounds at the minimum width."
+    },
+    {
+      "surface": "archive",
+      "route": "/archive",
+      "region": "published month group",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Archive labels and note row remain legible with no overlap or horizontal overflow."
+    },
+    {
+      "surface": "series-index",
+      "route": "/series",
+      "region": "series index entry",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Series entry and link remain readable and contained at the minimum width."
+    },
+    {
+      "surface": "series-detail",
+      "route": "/series/phase5-1259",
+      "region": "ordered series list",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Ordered entries stack without overlap and all links remain in bounds."
+    },
+    {
+      "surface": "series-navigation",
+      "route": "/notes/phase5-release-evidence-20260711-1259",
+      "region": "navigation[aria-label='系列导航']",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "The next-series control remains readable and contained in minimum-width document flow."
+    },
+    {
+      "surface": "related-articles",
+      "route": "/notes/phase5-release-evidence-20260711-1259",
+      "region": "related notes section",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "The related note card remains readable and contained below the article."
+    },
+    {
+      "surface": "admin-login",
+      "route": "/admin/login",
+      "region": "empty login form",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Empty email/password fields and primary login control are fully visible with no sensitive value or overflow."
+    },
+    {
+      "surface": "admin-library",
+      "route": "/admin/posts",
+      "region": "protected article library",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Fixture-only rows, status metadata, and publication/edit/delete controls are readable and aligned; identity is sanitized."
+    },
+    {
+      "surface": "admin-editor",
+      "route": "/admin/posts/{temporary-fixture-id}",
+      "region": "protected WYSIWYG editor",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Title, slug, excerpt, publication actions, toolbar, and writing canvas are readable with stable spacing and no overflow."
+    },
+    {
+      "surface": "admin-login",
+      "route": "/admin/login",
+      "region": "empty login form",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "The empty login form and primary control remain fully inside the mobile viewport."
+    },
+    {
+      "surface": "admin-library",
+      "route": "/admin/posts",
+      "region": "protected article library",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Library rows and protected actions reflow into an accessible mobile layout without page overflow."
+    },
+    {
+      "surface": "admin-editor",
+      "route": "/admin/posts/{temporary-fixture-id}",
+      "region": "protected WYSIWYG editor",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Header, publication controls, metadata fields, toolbar, and editor stack coherently with no clipped control."
+    },
+    {
+      "surface": "admin-login",
+      "route": "/admin/login",
+      "region": "empty login form",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "The empty login form and primary control remain fully visible at the minimum width."
+    },
+    {
+      "surface": "admin-library",
+      "route": "/admin/posts",
+      "region": "protected article library",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Library content and controls remain readable, keyboard-addressable, and horizontally contained."
+    },
+    {
+      "surface": "admin-editor",
+      "route": "/admin/posts/{temporary-fixture-id}",
+      "region": "protected WYSIWYG editor",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "result": "pass",
+      "finding": "Minimum-width editor controls and canvas remain readable and in bounds with no page overflow."
+    },
+    {
+      "surface": "homepage",
+      "route": "/",
+      "region": "light-mecha hero and static signal canvas",
+      "width": 1440,
+      "height": 900,
+      "motion": "reduced",
+      "result": "pass",
+      "finding": "Content is complete; canvas reports reduced-motion, pointer follow is disabled, frame count remains 0, and no animation is running."
+    },
+    {
+      "surface": "article",
+      "route": "/notes/phase5-release-evidence-20260711-1259",
+      "region": "article reading surface",
+      "width": 1440,
+      "height": 900,
+      "motion": "reduced",
+      "result": "pass",
+      "finding": "Article content, code, table, image, series navigation, and related note remain complete with no canvas or running animation."
+    }
+  ],
+  "evidence": [
+    {
+      "file": "output/playwright/phase5/12-home-desktop-final.png",
+      "route": "/",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "captured_at": "2026-07-11T13:12:48.790Z",
+      "mtime": "2026-07-11T13:12:48.790Z",
+      "sha256": "71e7e4983e57f1526926395784ced69a1d9fec898532c21554ee521fa21d8eb6",
+      "bytes": 929427
+    },
+    {
+      "file": "output/playwright/phase5/13-home-390-final.png",
+      "route": "/",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "captured_at": "2026-07-11T13:12:59.434Z",
+      "mtime": "2026-07-11T13:12:59.434Z",
+      "sha256": "48620ca9ec4aa9cf400697587d1e18992df308d606a12c8a09d55e0d7c6f5feb",
+      "bytes": 174745
+    },
+    {
+      "file": "output/playwright/phase5/14-home-320-final.png",
+      "route": "/",
+      "width": 320,
+      "height": 720,
+      "motion": "normal",
+      "captured_at": "2026-07-11T13:13:08.320Z",
+      "mtime": "2026-07-11T13:13:08.320Z",
+      "sha256": "f6bd25384ba17f0ae25ef49568ada7945598998623587aa03a5c2810b3a948c0",
+      "bytes": 117770
+    },
+    {
+      "file": "output/playwright/phase5/15-article-desktop-final.png",
+      "route": "/notes/phase5-release-evidence-20260711-1259",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "captured_at": "2026-07-11T13:13:25.579Z",
+      "mtime": "2026-07-11T13:13:25.579Z",
+      "sha256": "b2a33c6234fdb95bddd9a13a32c0986f67ae8d04a294839cfa18f3cb4b2033b5",
+      "bytes": 340300
+    },
+    {
+      "file": "output/playwright/phase5/16-article-390-final.png",
+      "route": "/notes/phase5-release-evidence-20260711-1259",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "captured_at": "2026-07-11T13:13:34.454Z",
+      "mtime": "2026-07-11T13:13:34.454Z",
+      "sha256": "616bbb4c192d192373d1ad42d4a460837fce19460d9edcf65880d1267114cb74",
+      "bytes": 134918
+    },
+    {
+      "file": "output/playwright/phase5/17-home-reduced-motion-final.png",
+      "route": "/",
+      "width": 1440,
+      "height": 900,
+      "motion": "reduced",
+      "captured_at": "2026-07-11T13:13:39.934Z",
+      "mtime": "2026-07-11T13:13:39.934Z",
+      "sha256": "de5d1401380cb16e0acdc96c8572bc413851a67efd16b93d1463058f0361f3d9",
+      "bytes": 929569
+    },
+    {
+      "file": "output/playwright/phase5/18-admin-login-final.png",
+      "route": "/admin/login",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "captured_at": "2026-07-11T12:59:29.228Z",
+      "mtime": "2026-07-11T12:59:29.228Z",
+      "sha256": "042f0025e6933643175216d97f5da4fcb101da767a32e557145ffbab2ff53ba1",
+      "bytes": 52768
+    },
+    {
+      "file": "output/playwright/phase5/19-admin-library-desktop-final.png",
+      "route": "/admin/posts",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "captured_at": "2026-07-11T13:16:41.794Z",
+      "mtime": "2026-07-11T13:16:41.794Z",
+      "sha256": "61c3eac890de26240ed2ddf9b704e9660c639f7f00ddab68f0589312d166cc12",
+      "bytes": 122811
+    },
+    {
+      "file": "output/playwright/phase5/20-admin-editor-desktop-final.png",
+      "route": "/admin/posts/{temporary-fixture-id}",
+      "width": 1440,
+      "height": 900,
+      "motion": "normal",
+      "captured_at": "2026-07-11T13:15:36.916Z",
+      "mtime": "2026-07-11T13:15:36.916Z",
+      "sha256": "fda3f7d87f63066d719cb26d7d992fe1e4993758022746d5999e598e457e809f",
+      "bytes": 75223
+    },
+    {
+      "file": "output/playwright/phase5/21-admin-editor-390-final.png",
+      "route": "/admin/posts/{temporary-fixture-id}",
+      "width": 390,
+      "height": 844,
+      "motion": "normal",
+      "captured_at": "2026-07-11T13:14:13.452Z",
+      "mtime": "2026-07-11T13:14:13.452Z",
+      "sha256": "ccdb40d4eb72fc3cf6777899c59a124035ce17a24f8e09e01d8f4570a43fd5b5",
+      "bytes": 62775
+    }
+  ]
+}

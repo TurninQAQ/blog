@@ -1,0 +1,112 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "返回首页" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e9]:
+            - generic [ref=e10]: Hans‘s Blog
+            - generic [ref=e11]: 程序员的个人技术博客
+        - button "打开导航" [ref=e13]
+    - main [ref=e15]:
+      - generic [ref=e20]:
+        - paragraph [ref=e21]:
+          - generic [ref=e24]: Hans‘s Blog
+        - heading "Hans‘s Blog" [level=1] [ref=e25]
+        - paragraph [ref=e28]: 这里记录技术笔记、系统草图和软件构建实验。
+        - paragraph [ref=e29]: 偏向工程实践、架构拆解和日常构建记录。
+        - generic [ref=e30]:
+          - link "查看笔记" [ref=e31] [cursor=pointer]:
+            - /url: /notes
+          - link "打开博客索引" [ref=e35] [cursor=pointer]:
+            - /url: "#lab-index"
+        - link "邮箱 zhdydkdh@163.com" [ref=e39] [cursor=pointer]:
+          - /url: mailto:zhdydkdh@163.com
+      - region "内容模块" [ref=e44]:
+        - region [ref=e46]:
+          - generic [ref=e47]:
+            - paragraph [ref=e48]: 内容模块
+            - heading "精选笔记" [level=2] [ref=e49]
+            - paragraph [ref=e50]: 首页展示已经公开且被明确设为精选的技术笔记，并同步真实公开内容统计。
+          - list [ref=e52]:
+            - listitem [ref=e53]:
+              - article [ref=e54]:
+                - generic [ref=e55]: 技术笔记
+                - generic [ref=e58]:
+                  - link "test" [ref=e59] [cursor=pointer]:
+                    - /url: /notes/test
+                  - paragraph [ref=e61]: test
+                  - generic [ref=e62]:
+                    - generic [ref=e63]: 2026/07/09
+                    - generic [ref=e66]: 预计阅读 15 分钟
+                    - generic [ref=e70]: 未分类
+          - region "公开内容统计" [ref=e74]:
+            - article [ref=e75]:
+              - generic [ref=e80]:
+                - paragraph [ref=e81]: 公开笔记
+                - paragraph [ref=e82]: "2"
+              - paragraph [ref=e83]: 当前可以公开阅读的技术笔记
+            - article [ref=e84]:
+              - generic [ref=e89]:
+                - paragraph [ref=e90]: 精选笔记
+                - paragraph [ref=e91]: "1"
+              - paragraph [ref=e92]: 首页明确展示的公开笔记
+            - article [ref=e93]:
+              - generic [ref=e98]:
+                - paragraph [ref=e99]: 分类
+                - paragraph [ref=e100]: "0"
+              - paragraph [ref=e101]: 暂无公开数据
+            - article [ref=e102]:
+              - generic [ref=e108]:
+                - paragraph [ref=e109]: 标签
+                - paragraph [ref=e110]: "0"
+              - paragraph [ref=e111]: 暂无公开数据
+            - article [ref=e112]:
+              - generic [ref=e119]:
+                - paragraph [ref=e120]: 系列
+                - paragraph [ref=e121]: "0"
+              - paragraph [ref=e122]: 暂无公开数据
+      - region [ref=e123]:
+        - generic [ref=e124]:
+          - generic [ref=e125]:
+            - paragraph [ref=e126]: 内容入口
+            - heading "博客索引" [level=2] [ref=e127]
+            - paragraph [ref=e128]: 笔记、系列、归档和搜索已经连接到公开内容，方便按主题与时间回看技术记录。
+          - generic [ref=e129]:
+            - article [ref=e130]:
+              - link "笔记" [ref=e135] [cursor=pointer]:
+                - /url: /notes
+              - paragraph [ref=e140]: 聚合技术写作、实现记录和踩坑复盘。
+            - article [ref=e141]:
+              - link "系列" [ref=e148] [cursor=pointer]:
+                - /url: /series
+              - paragraph [ref=e153]: 把同一主题的技术笔记按顺序串成专题。
+            - article [ref=e154]:
+              - link "归档" [ref=e160] [cursor=pointer]:
+                - /url: /archive
+              - paragraph [ref=e165]: 按时间回看已经发布的技术笔记。
+            - article [ref=e166]:
+              - link "搜索" [ref=e172] [cursor=pointer]:
+                - /url: /search
+              - paragraph [ref=e177]: 通过标题、主题或关键词查找内容。
+    - contentinfo [ref=e178]:
+      - generic [ref=e179]:
+        - generic [ref=e180]:
+          - paragraph [ref=e181]: Hans‘s Blog
+          - paragraph [ref=e182]: 程序员的个人技术博客
+          - paragraph [ref=e183]: 技术笔记、系统草图和软件构建实验。
+        - navigation "页脚导航" [ref=e184]:
+          - list [ref=e185]:
+            - listitem [ref=e186]:
+              - link "笔记" [ref=e187] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=e188]:
+              - link "系列" [ref=e189] [cursor=pointer]:
+                - /url: /series
+            - listitem [ref=e190]:
+              - link "归档" [ref=e191] [cursor=pointer]:
+                - /url: /archive
+            - listitem [ref=e192]:
+              - link "搜索" [ref=e193] [cursor=pointer]:
+                - /url: /search
+  - alert [ref=e194]

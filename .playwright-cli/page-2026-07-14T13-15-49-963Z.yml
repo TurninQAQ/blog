@@ -1,0 +1,128 @@
+- generic [active] [ref=f4e1]:
+  - generic [ref=f4e3]:
+    - banner [ref=f4e4]:
+      - generic [ref=f4e5]:
+        - generic [ref=f4e6]:
+          - generic [ref=f4e7]:
+            - paragraph [ref=f4e8]:
+              - generic [ref=f4e11]: Hans‘s Blog
+            - paragraph [ref=f4e12]: 当前登录 zhdydkdh@163.com
+          - generic [ref=f4e13]:
+            - generic "后台状态" [ref=f4e14]:
+              - generic [ref=f4e15]: 写作舱在线
+              - generic [ref=f4e17]: AUTHOR / 01
+            - button "退出登录" [ref=f4e19]
+        - navigation "管理员导航" [ref=f4e24]:
+          - link "控制台" [ref=f4e25] [cursor=pointer]:
+            - /url: /admin
+          - link "文章库" [ref=f4e26] [cursor=pointer]:
+            - /url: /admin/posts
+          - link "查看站点" [ref=f4e27] [cursor=pointer]:
+            - /url: /
+    - main [ref=f4e28]:
+      - generic [ref=f4e29]:
+        - generic [ref=f4e31]:
+          - link "返回仪表盘" [ref=f4e32] [cursor=pointer]:
+            - /url: /admin
+          - heading "新建草稿" [level=1] [ref=f4e35]
+          - paragraph [ref=f4e36]: 将技术笔记先保存为聚焦的 Markdown 草稿。
+          - button "导入 Markdown" [ref=f4e38]
+        - button "保存草稿" [ref=f4e44]
+        - generic [ref=f4e49]:
+          - generic [ref=f4e50]:
+            - generic [ref=f4e51]:
+              - text: 标题
+              - textbox "标题" [ref=f4e52]:
+                - /placeholder: React Server Components 笔记
+            - generic [ref=f4e53]:
+              - text: URL 路径
+              - textbox "URL 路径" [ref=f4e54]:
+                - /placeholder: react-server-components-notes
+            - generic [ref=f4e55]:
+              - text: 摘要
+              - textbox "摘要" [ref=f4e56]:
+                - /placeholder: 用于列表和公开卡片的简短摘要。
+            - region "正文画布" [ref=f4e57]:
+              - toolbar "正文工具栏" [ref=f4e58]:
+                - generic [ref=f4e59]:
+                  - generic [ref=f4e60]: 文本层级
+                  - combobox "文本层级" [ref=f4e61] [cursor=pointer]:
+                    - option "正文" [selected]
+                    - option "一级标题"
+                    - option "二级标题"
+                    - option "三级标题"
+                    - option "四级标题"
+                - generic [ref=f4e62]:
+                  - generic [ref=f4e63]: 文字颜色
+                  - combobox "文字颜色" [ref=f4e64] [cursor=pointer]:
+                    - option "默认色（清除）" [selected]
+                    - option "蓝色"
+                    - option "红色"
+                    - option "绿色"
+                    - option "琥珀色"
+                - button "加粗" [ref=f4e65] [cursor=pointer]
+                - button "下划线" [ref=f4e69] [cursor=pointer]
+                - button "插入引用" [ref=f4e73] [cursor=pointer]
+                - button "无序列表" [ref=f4e78] [cursor=pointer]
+                - button "有序列表" [ref=f4e81] [cursor=pointer]
+                - button "插入代码块" [ref=f4e86] [cursor=pointer]
+                - button "插入表格" [ref=f4e92] [cursor=pointer]
+                - button "插入图片" [pressed] [ref=f4e96] [cursor=pointer]
+              - dialog [ref=f4e147]:
+                - generic [ref=f4e148]:
+                  - generic [ref=f4e149]:
+                    - paragraph [ref=f4e150]: 图片素材
+                    - heading "插入图片" [level=2] [ref=f4e155]
+                  - button "关闭图片弹窗" [ref=f4e156]
+                - paragraph [ref=f4e160]: 选择本地文件、拖入图片，或直接在此弹窗粘贴剪贴板图片。
+                - generic [ref=f4e161]: 图片说明（建议填写）
+                - textbox "图片说明（建议填写）" [ref=f4e162]:
+                  - /placeholder: 描述图片中的关键信息
+                  - text: 真实上传验收图
+                - generic [ref=f4e163]:
+                  - paragraph [ref=f4e167]: 拖放或粘贴图片
+                  - paragraph [ref=f4e168]: JPEG / PNG / WebP，最大 10 MiB
+                  - button "选择本地图片" [ref=f4e169]
+                - generic [ref=f4e170]:
+                  - generic [ref=f4e171]: 或使用图片 URL
+                  - generic [ref=f4e175]:
+                    - textbox "或使用图片 URL" [ref=f4e176]:
+                      - /placeholder: https://example.com/image.png
+                    - button "插入 URL" [disabled] [ref=f4e177]
+                - alert [ref=f4e178]: 管理员请求来源不被允许。
+              - textbox "正文" [ref=f4e143]:
+                - paragraph [ref=f4e144]: 开始写技术笔记
+          - complementary [ref=f4e102]:
+            - generic [ref=f4e103]:
+              - paragraph [ref=f4e104]: 状态
+              - paragraph [ref=f4e105]: 草稿
+            - generic [ref=f4e106]:
+              - text: 封面图 URL
+              - textbox "封面图 URL" [ref=f4e107]:
+                - /placeholder: https://example.com/cover.png
+            - generic [ref=f4e108]:
+              - generic [ref=f4e109]:
+                - generic [ref=f4e110]: 分类
+                - combobox "分类" [ref=f4e113]:
+                  - option "未分类" [selected]
+              - generic [ref=f4e114]:
+                - text: 新建分类
+                - textbox "新建分类" [ref=f4e115]:
+                  - /placeholder: 架构
+            - group [ref=f4e116]:
+              - paragraph [ref=f4e121]: 还没有保存的标签。
+              - generic [ref=f4e122]:
+                - text: 新建标签
+                - textbox "新建标签" [ref=f4e123]:
+                  - /placeholder: Next.js, Prisma
+            - generic [ref=f4e124]:
+              - generic [ref=f4e125]:
+                - generic [ref=f4e126]: 系列
+                - combobox "系列" [ref=f4e130]:
+                  - option "无系列" [selected]
+              - generic [ref=f4e131]:
+                - text: 新建系列
+                - textbox "新建系列" [ref=f4e132]:
+                  - /placeholder: 构建日志
+  - button "Open Next.js Dev Tools" [ref=f4e138] [cursor=pointer]
+  - alert [ref=f4e145]

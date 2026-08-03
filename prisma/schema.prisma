@@ -1,0 +1,130 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum PublicationStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+model AdminUser {
+  id        String         @id @default(cuid())
+  email     String         @unique
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  sessions  AdminSession[]
+}
+
+model AdminLoginAttempt {
+  id             String    @id @default(cuid())
+  identifier     String
+  email          String
+  attempts       Int       @default(0)
+  lockedUntil    DateTime?
+  firstAttemptAt DateTime  @default(now())
+  lastAttemptAt  DateTime  @updatedAt
+
+  @@unique([identifier, email])
+  @@index([email])
+  @@index([lockedUntil])
+}
+
+model AdminSession {
+  id          String    @id @default(cuid())
+  tokenHash   String    @unique
+  adminUserId String
+  expiresAt   DateTime
+  createdAt   DateTime  @default(now())
+  lastSeenAt  DateTime  @default(now())
+  adminUser   AdminUser @relation(fields: [adminUserId], references: [id], onDelete: Cascade)
+
+  @@index([adminUserId])
+  @@index([expiresAt])
+}
+
+model Post {
+  id           String            @id @default(cuid())
+  title        String
+  slug         String            @unique
+  excerpt      String
+  bodyMarkdown String
+  coverImage   String?
+  status       PublicationStatus @default(DRAFT)
+  publishedAt  DateTime?
+  featured     Boolean           @default(false)
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  categoryId   String?
+  seriesId     String?
+  seriesOrder  Int?
+  category     Category?         @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  series       Series?           @relation(fields: [seriesId], references: [id], onDelete: SetNull)
+  tags         PostTag[]
+
+  @@index([status])
+  @@index([publishedAt])
+  @@index([categoryId])
+  @@index([seriesId, seriesOrder])
+  @@unique([seriesId, seriesOrder])
+}
+
+model Tag {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  posts       PostTag[]
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  posts       Post[]
+}
+
+model Series {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  posts       Post[]
+}
+
+model PostTag {
+  postId     String
+  tagId      String
+  assignedAt DateTime @default(now())
+  post       Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag        Tag      @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+  @@index([tagId])
+}
+
+model MediaAsset {
+  id         String    @id @default(cuid())
+  data       Bytes
+  mimeType   String
+  byteLength Int
+  width      Int
+  height     Int
+  sha256     String    @unique
+  publicAt   DateTime?
+  createdAt  DateTime  @default(now())
+
+  @@index([createdAt])
+}

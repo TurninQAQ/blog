@@ -1,0 +1,128 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - banner [ref=f1e3]:
+      - generic [ref=f1e4]:
+        - link "返回首页" [ref=f1e5] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f1e9]:
+            - generic [ref=f1e10]: Hans‘s Blog
+            - generic [ref=f1e11]: 程序员的个人技术博客
+        - generic [ref=f1e12]:
+          - navigation "主导航" [ref=f1e13]:
+            - list [ref=f1e14]:
+              - listitem [ref=f1e15]:
+                - link "笔记" [ref=f1e16] [cursor=pointer]:
+                  - /url: /notes
+              - listitem [ref=f1e20]:
+                - link "系列" [ref=f1e21] [cursor=pointer]:
+                  - /url: /series
+              - listitem [ref=f1e27]:
+                - link "归档" [ref=f1e28] [cursor=pointer]:
+                  - /url: /archive
+              - listitem [ref=f1e33]:
+                - link "搜索" [ref=f1e34] [cursor=pointer]:
+                  - /url: /search
+          - link "查看笔记" [ref=f1e39] [cursor=pointer]:
+            - /url: /notes
+    - main [ref=f1e40]:
+      - generic [ref=f1e45]:
+        - paragraph [ref=f1e46]:
+          - generic [ref=f1e49]: Hans‘s Blog
+        - heading "Hans‘s Blog" [level=1] [ref=f1e50]
+        - paragraph [ref=f1e53]: 这里记录技术笔记、系统草图和软件构建实验。
+        - paragraph [ref=f1e54]: 偏向工程实践、架构拆解和日常构建记录。
+        - generic [ref=f1e55]:
+          - link "查看笔记" [ref=f1e56] [cursor=pointer]:
+            - /url: /notes
+          - link "打开博客索引" [ref=f1e60] [cursor=pointer]:
+            - /url: "#lab-index"
+        - link "邮箱 zhdydkdh@163.com" [ref=f1e64] [cursor=pointer]:
+          - /url: mailto:zhdydkdh@163.com
+      - region "内容模块" [ref=f1e69]:
+        - region [ref=f1e71]:
+          - generic [ref=f1e72]:
+            - paragraph [ref=f1e73]: 内容模块
+            - heading "精选笔记" [level=2] [ref=f1e74]
+            - paragraph [ref=f1e75]: 首页展示已经公开且被明确设为精选的技术笔记，并同步真实公开内容统计。
+          - list [ref=f1e77]:
+            - listitem [ref=f1e78]:
+              - article [ref=f1e79]:
+                - generic [ref=f1e80]: 技术笔记
+                - generic [ref=f1e83]:
+                  - link "test" [ref=f1e84] [cursor=pointer]:
+                    - /url: /notes/test
+                  - paragraph [ref=f1e86]: test
+                  - generic [ref=f1e87]:
+                    - generic [ref=f1e88]: 2026/07/09
+                    - generic [ref=f1e91]: 预计阅读 15 分钟
+                    - generic [ref=f1e95]: 未分类
+          - region "公开内容统计" [ref=f1e99]:
+            - article [ref=f1e100]:
+              - generic [ref=f1e105]:
+                - paragraph [ref=f1e106]: 公开笔记
+                - paragraph [ref=f1e107]: "2"
+              - paragraph [ref=f1e108]: 当前可以公开阅读的技术笔记
+            - article [ref=f1e109]:
+              - generic [ref=f1e114]:
+                - paragraph [ref=f1e115]: 精选笔记
+                - paragraph [ref=f1e116]: "1"
+              - paragraph [ref=f1e117]: 首页明确展示的公开笔记
+            - article [ref=f1e118]:
+              - generic [ref=f1e123]:
+                - paragraph [ref=f1e124]: 分类
+                - paragraph [ref=f1e125]: "0"
+              - paragraph [ref=f1e126]: 暂无公开数据
+            - article [ref=f1e127]:
+              - generic [ref=f1e133]:
+                - paragraph [ref=f1e134]: 标签
+                - paragraph [ref=f1e135]: "0"
+              - paragraph [ref=f1e136]: 暂无公开数据
+            - article [ref=f1e137]:
+              - generic [ref=f1e144]:
+                - paragraph [ref=f1e145]: 系列
+                - paragraph [ref=f1e146]: "0"
+              - paragraph [ref=f1e147]: 暂无公开数据
+      - region [ref=f1e148]:
+        - generic [ref=f1e149]:
+          - generic [ref=f1e150]:
+            - paragraph [ref=f1e151]: 内容入口
+            - heading "博客索引" [level=2] [ref=f1e152]
+            - paragraph [ref=f1e153]: 笔记、系列、归档和搜索已经连接到公开内容，方便按主题与时间回看技术记录。
+          - generic [ref=f1e154]:
+            - article [ref=f1e155]:
+              - link "笔记" [ref=f1e160] [cursor=pointer]:
+                - /url: /notes
+              - paragraph [ref=f1e165]: 聚合技术写作、实现记录和踩坑复盘。
+            - article [ref=f1e166]:
+              - link "系列" [ref=f1e173] [cursor=pointer]:
+                - /url: /series
+              - paragraph [ref=f1e178]: 把同一主题的技术笔记按顺序串成专题。
+            - article [ref=f1e179]:
+              - link "归档" [ref=f1e185] [cursor=pointer]:
+                - /url: /archive
+              - paragraph [ref=f1e190]: 按时间回看已经发布的技术笔记。
+            - article [ref=f1e191]:
+              - link "搜索" [ref=f1e197] [cursor=pointer]:
+                - /url: /search
+              - paragraph [ref=f1e202]: 通过标题、主题或关键词查找内容。
+    - contentinfo [ref=f1e203]:
+      - generic [ref=f1e204]:
+        - generic [ref=f1e205]:
+          - paragraph [ref=f1e206]: Hans‘s Blog
+          - paragraph [ref=f1e207]: 程序员的个人技术博客
+          - paragraph [ref=f1e208]: 技术笔记、系统草图和软件构建实验。
+        - navigation "页脚导航" [ref=f1e209]:
+          - list [ref=f1e210]:
+            - listitem [ref=f1e211]:
+              - link "笔记" [ref=f1e212] [cursor=pointer]:
+                - /url: /notes
+            - listitem [ref=f1e213]:
+              - link "系列" [ref=f1e214] [cursor=pointer]:
+                - /url: /series
+            - listitem [ref=f1e215]:
+              - link "归档" [ref=f1e216] [cursor=pointer]:
+                - /url: /archive
+            - listitem [ref=f1e217]:
+              - link "搜索" [ref=f1e218] [cursor=pointer]:
+                - /url: /search
+  - button "Open Next.js Dev Tools" [ref=f1e224] [cursor=pointer]

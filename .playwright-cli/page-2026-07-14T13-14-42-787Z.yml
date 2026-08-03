@@ -1,0 +1,110 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e3]:
+    - banner [ref=f2e4]:
+      - generic [ref=f2e5]:
+        - generic [ref=f2e6]:
+          - generic [ref=f2e7]:
+            - paragraph [ref=f2e8]:
+              - generic [ref=f2e11]: Hans‘s Blog
+            - paragraph [ref=f2e12]: 当前登录 zhdydkdh@163.com
+          - generic [ref=f2e13]:
+            - generic "后台状态" [ref=f2e14]:
+              - generic [ref=f2e15]: 写作舱在线
+              - generic [ref=f2e17]: AUTHOR / 01
+            - button "退出登录" [ref=f2e19]
+        - navigation "管理员导航" [ref=f2e24]:
+          - link "控制台" [ref=f2e25] [cursor=pointer]:
+            - /url: /admin
+          - link "文章库" [ref=f2e26] [cursor=pointer]:
+            - /url: /admin/posts
+          - link "查看站点" [ref=f2e27] [cursor=pointer]:
+            - /url: /
+    - main [ref=f2e28]:
+      - generic [ref=f2e29]:
+        - generic [ref=f2e31]:
+          - link "返回仪表盘" [ref=f2e32] [cursor=pointer]:
+            - /url: /admin
+          - heading "编辑草稿" [level=1] [ref=f2e35]
+          - paragraph [ref=f2e36]: 将技术笔记先保存为聚焦的 Markdown 草稿。
+        - generic [ref=f2e37]:
+          - generic [ref=f2e38]:
+            - button "取消发布" [ref=f2e39]
+            - button "取消精选" [ref=f2e45]
+          - button "保存草稿" [ref=f2e50]
+        - generic [ref=f2e55]:
+          - generic [ref=f2e56]:
+            - generic [ref=f2e57]:
+              - text: 标题
+              - textbox "标题" [ref=f2e58]:
+                - /placeholder: React Server Components 笔记
+                - text: test
+            - generic [ref=f2e59]:
+              - text: URL 路径
+              - textbox "URL 路径" [ref=f2e60]:
+                - /placeholder: react-server-components-notes
+                - text: test
+            - generic [ref=f2e61]:
+              - text: 摘要
+              - textbox "摘要" [ref=f2e62]:
+                - /placeholder: 用于列表和公开卡片的简短摘要。
+                - text: test
+            - region "正文画布" [ref=f2e63]:
+              - toolbar "正文工具栏" [ref=f2e64]:
+                - generic [ref=f2e65]:
+                  - generic [ref=f2e66]: 文本层级
+                  - combobox "文本层级" [disabled] [ref=f2e67]:
+                    - option "正文" [selected]
+                    - option "一级标题"
+                    - option "二级标题"
+                    - option "三级标题"
+                    - option "四级标题"
+                - generic [ref=f2e68]:
+                  - generic [ref=f2e69]: 文字颜色
+                  - combobox "文字颜色" [disabled] [ref=f2e70]:
+                    - option "默认色（清除）" [selected]
+                    - option "蓝色"
+                    - option "红色"
+                    - option "绿色"
+                    - option "琥珀色"
+                - button "加粗" [disabled] [ref=f2e71]
+                - button "下划线" [disabled] [ref=f2e75]
+                - button "插入引用" [disabled] [ref=f2e79]
+                - button "无序列表" [disabled] [ref=f2e84]
+                - button "有序列表" [disabled] [ref=f2e87]
+                - button "插入代码块" [disabled] [ref=f2e92]
+                - button "插入表格" [disabled] [ref=f2e98]
+                - button "插入图片" [disabled] [ref=f2e102]
+          - complementary [ref=f2e108]:
+            - generic [ref=f2e109]:
+              - paragraph [ref=f2e110]: 状态
+              - paragraph [ref=f2e111]: 已发布
+              - paragraph [ref=f2e112]: 精选
+            - generic [ref=f2e113]:
+              - text: 封面图 URL
+              - textbox "封面图 URL" [ref=f2e114]:
+                - /placeholder: https://example.com/cover.png
+            - generic [ref=f2e115]:
+              - generic [ref=f2e116]:
+                - generic [ref=f2e117]: 分类
+                - combobox "分类" [ref=f2e120]:
+                  - option "未分类" [selected]
+              - generic [ref=f2e121]:
+                - text: 新建分类
+                - textbox "新建分类" [ref=f2e122]:
+                  - /placeholder: 架构
+            - group [ref=f2e123]:
+              - paragraph [ref=f2e128]: 还没有保存的标签。
+              - generic [ref=f2e129]:
+                - text: 新建标签
+                - textbox "新建标签" [ref=f2e130]:
+                  - /placeholder: Next.js, Prisma
+            - generic [ref=f2e131]:
+              - generic [ref=f2e132]:
+                - generic [ref=f2e133]: 系列
+                - combobox "系列" [ref=f2e137]:
+                  - option "无系列" [selected]
+              - generic [ref=f2e138]:
+                - text: 新建系列
+                - textbox "新建系列" [ref=f2e139]:
+                  - /placeholder: 构建日志
+  - button "Open Next.js Dev Tools" [ref=f2e145] [cursor=pointer]

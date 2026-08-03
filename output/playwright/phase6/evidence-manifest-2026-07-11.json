@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "evidence": [
+    {
+      "file": "output/playwright/phase6/prod-home-desktop.png",
+      "sha256": "912ab8be96d3959208184584174bd1fe86a97202ebd5b6f5285d3767c6c89085",
+      "bytes": 1213438,
+      "width": 1425,
+      "height": 1696
+    },
+    {
+      "file": "output/playwright/phase6/prod-home-390.png",
+      "sha256": "b57bf22332e821ecfc848fd4a7b18b3af71d77d6e528e3d57164c4f7dde08c47",
+      "bytes": 363528,
+      "width": 375,
+      "height": 3165
+    },
+    {
+      "file": "output/playwright/phase6/prod-home-320.png",
+      "sha256": "bc872d9d8848b8c287492fee7aafaf7c0520035b68d4623b6907476c9568dd81",
+      "bytes": 284639,
+      "width": 305,
+      "height": 3068
+    },
+    {
+      "file": "output/playwright/phase6/prod-admin-editor.png",
+      "sha256": "1a52df36ff6bd7b07800b103446178087a21d0399aa4c5d43db8064db62700c9",
+      "bytes": 115045,
+      "width": 1425,
+      "height": 2138
+    },
+    {
+      "file": "output/playwright/phase6/prod-admin-image-modal.png",
+      "sha256": "d95e371c8c12bea8f0d35bbc4be91718a443979e596b7c5f03ba2a3dbb54330f",
+      "bytes": 105013,
+      "width": 1440,
+      "height": 900
+    }
+  ]
+}
