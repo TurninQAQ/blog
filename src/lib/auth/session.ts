@@ -33,23 +33,45 @@ function getSessionExpiresAt(now = new Date()) {
   return new Date(now.getTime() + ADMIN_SESSION_MAX_AGE_SECONDS * 1000);
 }
 
+function shouldUseSecureSessionCookie() {
+  if (process.env.NODE_ENV !== "production") {
+    return false;
+  }
+
+  const configuredOrigin = process.env.ADMIN_SITE_ORIGIN?.trim();
+
+  if (!configuredOrigin) {
+    return false;
+  }
+
+  try {
+    return new URL(configuredOrigin).protocol === "https:";
+  } catch {
+    return true;
+  }
+}
+
 function getSessionCookieOptions(expiresAt: Date) {
+  const secure = shouldUseSecureSessionCookie();
+
   return {
     httpOnly: true,
     sameSite: "lax" as const,
     path: "/",
-    secure: process.env.NODE_ENV === "production",
+    secure,
     maxAge: ADMIN_SESSION_MAX_AGE_SECONDS,
     expires: expiresAt,
   };
 }
 
 function getExpiredCookieOptions() {
+  const secure = shouldUseSecureSessionCookie();
+
   return {
     httpOnly: true,
     sameSite: "lax" as const,
     path: "/",
-    secure: process.env.NODE_ENV === "production",
+    secure,
     maxAge: 0,
     expires: new Date(0),
   };

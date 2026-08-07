@@ -36,6 +36,22 @@ const authEnvSchema = databaseEnvSchema.extend({
 
 type RuntimeEnv = Record<string, string | undefined>;
 
+function normalizeAdminPasswordHash(value: string) {
+  return value.trim().replace(/\\\$/g, "$");
+}
+
+function resolveAdminPasswordHash(env: RuntimeEnv) {
+  const encodedHash = env.ADMIN_PASSWORD_HASH_B64?.trim();
+
+  if (encodedHash) {
+    return normalizeAdminPasswordHash(
+      Buffer.from(encodedHash, "base64").toString("utf8"),
+    );
+  }
+
+  return normalizeAdminPasswordHash(env.ADMIN_PASSWORD_HASH ?? "");
+}
+
 function parseEnv<T>(
   schema: z.ZodType<T>,
   env: RuntimeEnv,
@@ -68,7 +84,12 @@ export function getDatabaseUrl(env: RuntimeEnv = process.env) {
 }
 
 export function getAuthEnv(env: RuntimeEnv = process.env): AuthEnv {
-  return parseEnv(authEnvSchema, env, [
+  const resolvedEnv = {
+    ...env,
+    ADMIN_PASSWORD_HASH: resolveAdminPasswordHash(env),
+  };
+
+  return parseEnv(authEnvSchema, resolvedEnv, [
     "DATABASE_URL",
     "ADMIN_EMAIL",
     "ADMIN_PASSWORD_HASH",

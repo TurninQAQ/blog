@@ -7,6 +7,7 @@ node_modules/
 
 # Next.js
 .next/
+.next.backup-*/
 out/
 
 # Production
@@ -19,6 +20,7 @@ playwright-report/
 # Local env files
 .env*
 !.env.example
+.admin-credentials
 
 # Logs
 npm-debug.log*

@@ -30,6 +30,8 @@ const configuredAdminOrigin = (() => {
     return null;
   }
 })();
+const shouldSendStrictTransportSecurity =
+  !isDevelopment && (configuredAdminOrigin?.startsWith("https://") ?? false);
 const formActionSources = [
   "'self'",
   ...(configuredAdminOrigin ? [configuredAdminOrigin] : []),
@@ -53,7 +55,7 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: contentSecurityPolicy,
   },
-  ...(!isDevelopment
+  ...(shouldSendStrictTransportSecurity
     ? [
         {
           key: "Strict-Transport-Security",

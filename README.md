@@ -48,8 +48,9 @@ cp .env.example .env.local
 | `DATABASE_URL` | PostgreSQL 连接地址 |
 | `ADMIN_EMAIL` | 唯一管理员邮箱 |
 | `ADMIN_PASSWORD_HASH` | 管理员密码的 Argon2 hash |
+| `ADMIN_PASSWORD_HASH_B64` | 可选，同一个 Argon2 hash 的 base64 值；设置后优先使用，避免 `$` 被环境加载器展开 |
 | `ADMIN_SESSION_SECRET` | 至少 32 个字符的会话签名密钥 |
-| `ADMIN_SITE_ORIGIN` | 生产环境的最终 HTTPS origin，本地开发可留空 |
+| `ADMIN_SITE_ORIGIN` | 生产环境的最终 origin，本地开发或 HTTP 临时部署可留空 |
 | `PLAYWRIGHT_ADMIN_PASSWORD` | 仅供本地或 CI 浏览器测试使用的管理员明文密码 |
 
 从标准输入安全生成管理员密码 hash：
@@ -61,7 +62,11 @@ printf '%s' "$ADMIN_PLAINTEXT" | npm run --silent admin:hash-password
 unset ADMIN_PLAINTEXT
 ```
 
-写入本地 `.env.local` 时，需要把 hash 中的每个 `$` 写成 `\$`；生产环境的 secret manager 应保存未转义的原始 hash。
+写入本地 `.env.local` 时，需要把 hash 中的每个 `$` 写成 `\$`；如果部署平台或服务管理器会展开 `$`，也可以改用 `ADMIN_PASSWORD_HASH_B64`：
+
+```bash
+printf '%s' "$ADMIN_PASSWORD_HASH" | base64 -w0
+```
 
 初始化数据库与管理员：
 
