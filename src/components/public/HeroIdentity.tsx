@@ -50,7 +50,7 @@ function PortalHeroScene({ className = "" }: { className?: string }) {
 
         <div className="manga-portal-image-frame">
           <Image
-            src="/images/portal/rick-morty-season-four-hero.webp"
+            src="/images/portal/rick-morty-portal-gun-2d.webp"
             alt=""
             fill
             loading={isMobileVariant ? "eager" : undefined}
