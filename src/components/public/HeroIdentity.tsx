@@ -50,7 +50,7 @@ function PortalHeroScene({ className = "" }: { className?: string }) {
 
         <div className="manga-portal-image-frame">
           <Image
-            src="/images/portal/note-fallback-portal.webp"
+            src="/images/portal/rick-morty-season-four-hero.webp"
             alt=""
             fill
             loading={isMobileVariant ? "eager" : undefined}
@@ -61,14 +61,6 @@ function PortalHeroScene({ className = "" }: { className?: string }) {
                 : "(min-width: 1024px) 640px, 48vw"
             }
             className="manga-portal-image"
-          />
-          <Image
-            src="/images/portal/portal-gun-overlay.png"
-            alt=""
-            width={982}
-            height={988}
-            sizes="(max-width: 767px) 22vw, 154px"
-            className="manga-portal-gun-overlay"
           />
         </div>
 
