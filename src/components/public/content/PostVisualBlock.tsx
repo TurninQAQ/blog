@@ -28,15 +28,14 @@ export function PostVisualBlock({ coverImage, title }: PostVisualBlockProps) {
         <Image
           src="/images/portal/note-fallback-portal.webp"
           alt=""
-          aria-hidden="true"
           fill
           sizes="(min-width: 1024px) 280px, 100vw"
-          className="object-cover"
+          className="manga-post-visual-fallback object-cover"
           data-testid="post-visual-fallback"
           loading="eager"
         />
       )}
-      <span className="absolute bottom-3 left-3 rounded-lab border-2 border-lab-accent bg-[#0a0e1a] px-2 py-1 font-mono text-[12px] font-semibold leading-[1.4] text-lab-accent">
+      <span className="absolute bottom-3 left-3 rounded-lab border border-lab-accent bg-[#070a12]/92 px-2 py-1 font-mono text-[12px] font-semibold leading-[1.4] text-lab-accent">
         技术笔记
       </span>
     </div>

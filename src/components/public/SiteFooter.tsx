@@ -26,7 +26,7 @@ export function SiteFooter() {
             className="mt-4 font-mono text-[12px] leading-[1.4] text-lab-accent/70"
             lang="en"
           >
-            Wubba Lubba Dub Dub! — Dimension C-137
+            Dimension C-137 // Portal notes online
           </p>
         </div>
 
