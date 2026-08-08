@@ -4210,6 +4210,19 @@ button {
   filter: saturate(1.12) contrast(1.05) brightness(0.94);
 }
 
+.manga-portal-gun-overlay {
+  position: absolute;
+  top: 35%;
+  left: 39%;
+  z-index: 4;
+  width: 20%;
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 3px rgba(2, 8, 15, 0.58));
+  transform: rotate(-2deg);
+  transform-origin: 62% 72%;
+}
+
 .manga-hero__hud {
   border-color: rgba(85, 231, 255, 0.42);
   background:
@@ -4396,6 +4409,12 @@ button {
 
   .manga-portal-image {
     object-position: 62% center;
+  }
+
+  .manga-portal-gun-overlay {
+    top: 35%;
+    left: 39%;
+    width: 22%;
   }
 
   .manga-hero__hud,

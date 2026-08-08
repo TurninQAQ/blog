@@ -62,6 +62,14 @@ function PortalHeroScene({ className = "" }: { className?: string }) {
             }
             className="manga-portal-image"
           />
+          <Image
+            src="/images/portal/portal-gun-overlay.png"
+            alt=""
+            width={982}
+            height={988}
+            sizes="(max-width: 767px) 22vw, 154px"
+            className="manga-portal-gun-overlay"
+          />
         </div>
 
         <div className="manga-hero__hud manga-hero__hud--top">
